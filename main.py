@@ -40,3 +40,17 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
+
+
+from src.DataScienceProject.pipeline.model_trainer_pipeline import ModelTrainerTrainingPipeline
+
+STAGE_NAME ="Model Training Stage"
+
+try:
+    logger.info(f">>>>> stage {STAGE_NAME} started <<<<<<<<")
+    model_trainer = ModelTrainerTrainingPipeline()
+    model_trainer.initiate_model_training()
+    logger.info(f">>>>>>>> stage {STAGE_NAME} completed <<<<<<<<<<\n\n x==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
